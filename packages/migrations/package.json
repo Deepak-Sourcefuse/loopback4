@@ -1,0 +1,30 @@
+{
+    "name": "migrations",
+    "version": "1.0.0",
+    "description": "Package to handle Db migrations for all microservices DBs",
+    "main": "lib/migrations.js",
+    "scripts": {
+        "db:migrate": "run-s db:migrate:*",
+        "db:migrate-down": "run-s db:migrate-down:*",
+        "db:migrate-reset": "run-s db:migrate-reset:*",
+        "db:migrate:notification-service": "db-migrate up --config 'notification-service/database.json' -m 'notification-service/migrations'",
+        "db:migrate-down:notification-service": "db-migrate down --config 'notification-service/database.json' -m 'notification-service/migrations'",
+        "db:migrate-reset:notification-service": "db-migrate reset --config 'notification-service/database.json' -m 'notification-service/migrations'",
+        "db:migrate:chat-service": "db-migrate up --config 'chat-service/database.json' -m 'chat-service/migrations'",
+        "db:migrate-down:chat-service": "db-migrate down --config 'chat-service/database.json' -m 'chat-service/migrations'",
+        "db:migrate-reset:chat-service": "db-migrate reset --config 'chat-service/database.json' -m 'chat-service/migrations'"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "db-migrate": "^1.0.0-beta.21",
+        "dotenv": "^16.4.5",
+        "dotenv-extended": "^2.9.0",
+        "kindof": "^2.0.0",
+        "db-migrate-pg": "^1.3.0"
+    },
+    "devDependencies": {
+        "@types/dotenv": "^8.2.0",
+        "npm-run-all": "^4.1.5"
+    }
+}

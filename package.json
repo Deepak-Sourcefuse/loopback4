@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@loopback/sequelize": "^0.6.10",
+    "@sourceloop/chat-service": "^13.0.2",
+    "@sourceloop/notification-service": "^14.0.2",
+    "loopback4-notifications": "^9.0.1",
+    "nodemailer": "^6.9.16"
+  },
+  "devDependencies": {
+    "lerna": "^8.1.9"
+  }
+}
